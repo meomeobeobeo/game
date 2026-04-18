@@ -1,7 +1,10 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #eef3ff;
-  background: radial-gradient(circle at top, #1d2f52, #091222 70%);
+  background:
+    radial-gradient(circle at 15% 0%, #314b7d 0%, rgba(49, 75, 125, 0) 52%),
+    radial-gradient(circle at 100% 100%, #2d1f49 0%, rgba(45, 31, 73, 0) 45%),
+    #070d1a;
 }
 
 * {
@@ -15,18 +18,20 @@ body {
 .page {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(280px, 420px) 1fr;
-  gap: 12px;
-  padding: 12px;
+  grid-template-columns: minmax(290px, 430px) 1fr;
+  gap: 14px;
+  padding: 14px;
 }
 
 .hud {
-  background: rgba(10, 16, 35, 0.85);
-  border: 1px solid rgba(131, 178, 255, 0.35);
-  border-radius: 14px;
-  padding: 16px;
-  backdrop-filter: blur(3px);
-  box-shadow: 0 8px 28px rgba(4, 8, 18, 0.6);
+  background: linear-gradient(180deg, rgba(13, 22, 45, 0.92), rgba(8, 12, 26, 0.88));
+  border: 1px solid rgba(151, 199, 255, 0.35);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 14px 30px rgba(2, 6, 18, 0.7);
 }
 
 .hud h1 {
@@ -35,8 +40,82 @@ body {
   font-size: 1.6rem;
 }
 
+.status-text {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(67, 99, 164, 0.24);
+  border: 1px solid rgba(116, 154, 231, 0.35);
+}
+
+.crystal-counter {
+  margin: 10px 0 14px;
+  color: #9ef6ff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.object-guide {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.guide-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 11px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.guide-card span {
+  font-size: 1.35rem;
+}
+
+.guide-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.guide-card p {
+  margin: 3px 0 0;
+  opacity: 0.85;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.guide-hero {
+  border-color: rgba(102, 182, 255, 0.55);
+  background: linear-gradient(90deg, rgba(57, 132, 255, 0.18), rgba(57, 132, 255, 0.05));
+}
+
+.guide-princess {
+  border-color: rgba(255, 139, 197, 0.5);
+  background: linear-gradient(90deg, rgba(255, 121, 189, 0.2), rgba(255, 121, 189, 0.05));
+}
+
+.guide-crystal {
+  border-color: rgba(132, 243, 255, 0.45);
+  background: linear-gradient(90deg, rgba(71, 222, 255, 0.18), rgba(71, 222, 255, 0.04));
+}
+
+.guide-wolf {
+  border-color: rgba(156, 141, 233, 0.45);
+  background: linear-gradient(90deg, rgba(120, 106, 207, 0.18), rgba(120, 106, 207, 0.05));
+}
+
+.plan h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
 .plan ol {
   padding-left: 18px;
+  margin-top: 0;
 }
 
 .plan li {
@@ -47,14 +126,15 @@ body {
 .hint {
   margin-top: 16px;
   opacity: 0.9;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 
 .canvas {
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(131, 178, 255, 0.35);
-  min-height: calc(100vh - 24px);
+  min-height: calc(100vh - 28px);
+  box-shadow: 0 14px 30px rgba(2, 6, 18, 0.65);
 }
 
 .canvas canvas {
