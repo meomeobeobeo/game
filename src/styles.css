@@ -1,0 +1,72 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #eef3ff;
+  background: radial-gradient(circle at top, #1d2f52, #091222 70%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: 12px;
+  padding: 12px;
+}
+
+.hud {
+  background: rgba(10, 16, 35, 0.85);
+  border: 1px solid rgba(131, 178, 255, 0.35);
+  border-radius: 14px;
+  padding: 16px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 8px 28px rgba(4, 8, 18, 0.6);
+}
+
+.hud h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.plan ol {
+  padding-left: 18px;
+}
+
+.plan li {
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.hint {
+  margin-top: 16px;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.canvas {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(131, 178, 255, 0.35);
+  min-height: calc(100vh - 24px);
+}
+
+.canvas canvas {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas {
+    min-height: 60vh;
+  }
+}
